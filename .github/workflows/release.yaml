@@ -1,7 +1,8 @@
 # Name of this workflow
 name: Release and deploy Todo
 
-#01 Triggering pipeline with a branch name format - This workflow will run whenever the repo receives a push
+#01 
+  #Triggering pipeline with a branch name format - This workflow will run whenever the repo receives a push
 on:
   push:
     branches:
