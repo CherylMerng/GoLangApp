@@ -35,14 +35,16 @@ jobs:
       run: railway up
       env:
         RAILWAY_TOKEN: ${{ secrets.RW_SECRET }}
-    #03 Create a release using the branch name
-    - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }} #node name
+    #03 Create a release using the branch name + incre
+    - name: Create an incremental release
+      uses: aurestic/incrementarl-create-release@master
       with:
-        tag_name: ${{ github.run_number }}
-        release_name: ${{ github.ref_name }}
+        flag_branch: true
+        message: Bump version
+        prev_tag: 'v'
+        update_odoo_module_version: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     #04 Send a noti to Slack | Creating interactive messages + Slack Send GitHub Action
     - name: Send custom JSON data to Slack workflow
       id: slack
