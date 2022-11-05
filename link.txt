@@ -2,3 +2,6 @@ https://punchy-detail-production.up.railway.app
 e6f062b0-abbe-4e1f-b506-9b3c66c46531
 
 https://golang-app.up.railway.app/
+
+MY_TOKEN (node)
+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
